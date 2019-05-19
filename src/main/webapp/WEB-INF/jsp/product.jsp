@@ -74,6 +74,9 @@ a {
 	<div class="body">
 		<div class="row">
 			<div class="column">
+				<img src="/images/products/${product.productId}.jpg"
+					alt="Image Not Available" height="200px" width="200px" /> <br>
+				<br>
 				<table>
 					<tr>
 						<th>Name:</th>

@@ -71,7 +71,9 @@ a {
 	</div>
 
 	<div class="body">
+
 		<form id="updateform" method="post" action="/admin/products">
+
 			<input type="hidden" name="productId"
 				value="${adminProduct.productId}" />
 			<table>

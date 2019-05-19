@@ -15,4 +15,5 @@ public interface Constants {
 	String ADMIN_ORDER_PRODUCTS = "adminOrderProducts";
 	String ADMIN_PRODUCTS = "adminProducts";
 	String ADMIN_PRODUCT = "adminProduct";
+	String PRODUCT_IMG_PATH = "src\\main\\webapp\\images\\products";
 }

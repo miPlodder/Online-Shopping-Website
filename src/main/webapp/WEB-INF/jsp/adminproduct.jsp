@@ -58,8 +58,13 @@ a {
 	</div>
 
 	<div class="body">
-		<form action="" id="productform" method="post">
+		<form action="" id="productform" method="post"
+			enctype="multipart/form-data">
 			<table>
+				<tr>
+					<th>Image</th>
+					<td><input type="file" name="image" /></td>
+				</tr>
 				<tr>
 					<th>Product Name</th>
 					<td><input type="text" name="productName" /></td>
@@ -70,7 +75,8 @@ a {
 				</tr>
 				<tr>
 					<th>Rating</th>
-					<td><input type="number" value="1" min="1" max="5" name="rating" /></td>
+					<td><input type="number" value="1" min="1" max="5"
+						name="rating" /></td>
 				</tr>
 				<tr>
 					<th>Description</th>
@@ -81,9 +87,10 @@ a {
 					<th>Seller</th>
 					<td><input type="text" name="seller" /></td>
 				</tr>
+
 				<tr>
 					<th></th>
-					<td><input type="submit"/></td>
+					<td><input type="submit" /></td>
 				</tr>
 			</table>
 		</form>

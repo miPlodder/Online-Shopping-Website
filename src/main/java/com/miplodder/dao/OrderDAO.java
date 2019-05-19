@@ -42,4 +42,10 @@ public class OrderDAO {
 		orderRepository = BeanUtil.getBean(OrderRepository.class);
 		orderRepository.save(order);
 	}
+
+	public List<Order> getAllOrder() {
+		orderRepository = BeanUtil.getBean(OrderRepository.class);
+		List<Order> orders = orderRepository.findAll();
+		return orders;
+	}
 }

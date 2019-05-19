@@ -98,4 +98,12 @@ public class Product {
 		this.seller = seller;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", price=" + price + ", rating="
+				+ rating + ", description=" + description + ", seller=" + seller + "]";
+	}
+	
+	
+
 }

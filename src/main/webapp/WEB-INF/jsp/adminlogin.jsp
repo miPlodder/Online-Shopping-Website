@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Thrift Shop</title>
+<title>Admin Login</title>
 <style>
 body {
 	margin: 0px;
@@ -43,16 +43,18 @@ a {
   }
   
 </script>
+
 </head>
 <body>
+
 	<div class="header">
 		<ul id="ul_top_hypers">
 			<li><a id="a-signin" href="/">Sign In</a></li>
-			<li><a href="/signup">Sign Up</a></li>
 		</ul>
 	</div>
+
 	<div class="body">
-		<form action="/" method="post">
+		<form action="" method="post">
 			<table align="center">
 				<tr>
 					<td>Username</td>
@@ -68,6 +70,8 @@ a {
 				</tr>
 			</table>
 		</form>
+
 	</div>
+
 </body>
 </html>

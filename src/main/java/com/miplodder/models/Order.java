@@ -130,4 +130,11 @@ public class Order {
 		this.date = date;
 	}
 
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", userId=" + userId + ", productId=" + productId + ", shippingAddress="
+				+ shippingAddress + ", city=" + city + ", country=" + country + ", quantity=" + quantity + ", date="
+				+ date + "]";
+	}
+
 }

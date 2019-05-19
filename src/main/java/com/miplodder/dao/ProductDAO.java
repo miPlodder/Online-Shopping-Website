@@ -21,4 +21,15 @@ public class ProductDAO {
 		return productRepository.findByProductId(productId);
 	}
 
+	public Product addProduct(Product product) {
+		productRepository = BeanUtil.getBean(ProductRepository.class);
+		productRepository.save(product);
+		return product;
+	}
+
+	public Product updateProduct(Product product) {
+		productRepository.save(product);
+		return product;
+	}
+
 }

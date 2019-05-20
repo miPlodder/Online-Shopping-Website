@@ -76,7 +76,7 @@ a {
   
 </script>
 </head>
-<body>
+<body bgcolor="#F0F8FF">
 	<div class="header">
 		<ul id="ul_top_hypers">
 			<li><a id="a-home" href="home">Home</a></li>

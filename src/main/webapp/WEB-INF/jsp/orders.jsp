@@ -36,6 +36,34 @@ a {
 	padding: 50px;
 	font-size: 20px;
 }
+
+/* CSS for tables*/
+table {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table td, table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+table tr:hover {
+	background-color: #ddd;
+}
+
+table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #8CBFFF;
+	color: white;
+}
 </style>
 
 <script type="text/javascript">
@@ -46,7 +74,7 @@ a {
   
 </script>
 </head>
-<body>
+<body bgcolor="#F0F8FF">
 	<div class="header">
 		<ul id="header-ul">
 			<li><a href="/home">Home</a></li>
@@ -68,17 +96,28 @@ a {
 				<th>Quantity</th>
 				<th>Date</th>
 			</tr>
-			<c:forEach items="${orderProducts}" var="orderProduct">
-				<tr>
-					<th>${orderProduct.productName}</th>
-					<td>${orderProduct.price}</td>
-					<td>${orderProduct.shippingAddress}</td>
-					<td>${orderProduct.city}</td>
-					<td>${orderProduct.country}</td>
-					<td>${orderProduct.quantity}</td>
-					<td>${orderProduct.date}</td>
-				</tr>
-			</c:forEach>
+
+			<c:choose>
+				<c:when test="${orderProducts.size() == 0}">
+					<tr>
+						<td colspan="7" align="center">No order history found....</td>
+					</tr>
+				</c:when>
+
+				<c:otherwise>
+					<c:forEach items="${orderProducts}" var="orderProduct">
+						<tr>
+							<td>${orderProduct.productName}</td>
+							<td>${orderProduct.price}</td>
+							<td>${orderProduct.shippingAddress}</td>
+							<td>${orderProduct.city}</td>
+							<td>${orderProduct.country}</td>
+							<td>${orderProduct.quantity}</td>
+							<td>${orderProduct.date}</td>
+						</tr>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
 		</table>
 	</div>
 </body>

@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <title>Admin Products</title>
 <style>
 body {
@@ -35,6 +37,35 @@ body {
 	padding: 50px;
 	font-size: 20px;
 }
+
+/* CSS for tables*/
+table {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table td, table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	width: 20%;
+}
+
+table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+table tr:hover {
+	background-color: #ddd;
+}
+
+table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #8CBFFF;
+	color: white;
+}
 </style>
 
 <script type="text/javascript">
@@ -49,7 +80,7 @@ body {
   
 </script>
 </head>
-<body>
+<body bgcolor="#F0F8FF">
 
 	<div class="header">
 		<ul id="header-ul">
@@ -63,23 +94,27 @@ body {
 
 	<div class="body">
 
-		<button onclick="redirect()">Add Product</button>
 		<table align="center">
 			<tr>
 				<th>Product Id</th>
 				<th>Product Name</th>
 				<th>Price</th>
 				<th>Seller</th>
+				<th>Update</th>
 			</tr>
 			<c:forEach items="${adminProducts}" var="adminProduct">
 				<tr>
-					<th><c:out value="${adminProduct.productId}" /></th>
+					<td><c:out value="${adminProduct.productId}" /></td>
 					<td><c:out value="${adminProduct.productName}" /></td>
 					<td><c:out value="${adminProduct.price}" /></td>
 					<td><c:out value="${adminProduct.seller}" /></td>
 					<td><a href="products/${adminProduct.productId}">Update</a></td>
 				</tr>
 			</c:forEach>
+			<tr>
+				<td colspan="5" align="center"><button onclick="redirect()"
+						class="w3-button w3-xlarge w3-circle w3-blue">+</button></td>
+			</tr>
 		</table>
 	</div>
 </body>

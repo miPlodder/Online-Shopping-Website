@@ -36,6 +36,51 @@ a {
 	padding: 50px;
 	font-size: 20px;
 }
+
+/* CSS for tables*/
+table {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table td, table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	width: 20%;
+}
+
+table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+table tr:hover {
+	background-color: #ddd;
+}
+
+table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #8CBFFF;
+	color: white;
+}
+
+/* CSS for INPUT types */
+input[type=submit] {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
 </style>
 
 <script type="text/javascript">
@@ -47,7 +92,7 @@ a {
 </script>
 
 </head>
-<body>
+<body bgcolor="#F0F8FF">
 
 	<div class="header">
 		<ul id="header-ul">
@@ -65,7 +110,7 @@ a {
 				<table align="center">
 					<tr>
 						<th><c:out value="${product.productName}" /></th>
-						<td><c:out value="${product.price}" /></td>
+						<td><c:out value="$ ${product.price}" /></td>
 						<td><input type="submit" value="Buy now" /></td>
 					</tr>
 				</table>

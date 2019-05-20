@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.miplodder.constants.Constants;
 import com.miplodder.dao.SignupDAO;
 import com.miplodder.models.User;
+import com.miplodder.utils.SHAUtil;
 
 @Controller
 @RequestMapping("/signup")
@@ -30,6 +31,7 @@ public class SignupController {
 
 	@PostMapping
 	public String signup(@ModelAttribute User user, ModelMap modelMap) {
+		user.setPassword(SHAUtil.getSHA(user.getPassword()));
 		signupDAO.addNewUser(user);
 		modelMap.addAttribute(Constants.USERNAME, user.getUsername());
 		return "home.jsp";

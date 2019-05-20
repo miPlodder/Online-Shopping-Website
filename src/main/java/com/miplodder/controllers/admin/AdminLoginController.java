@@ -12,6 +12,7 @@ import com.miplodder.constants.Constants;
 import com.miplodder.dao.AdminUserDAO;
 import com.miplodder.models.AdminUser;
 import com.miplodder.models.LoginCredential;
+import com.miplodder.utils.SHAUtil;
 
 @Controller
 @RequestMapping("/admin")
@@ -31,6 +32,7 @@ public class AdminLoginController {
 
 	@PostMapping
 	public String loginCredentialsCheck(@ModelAttribute LoginCredential loginCredential, ModelMap model) {
+		loginCredential.setPassword(SHAUtil.getSHA(loginCredential.getPassword()));
 		AdminUser adminUser = adminUserDAO.checkLoginCredentials(loginCredential);
 		if (adminUser == null) {
 			return "adminlogin.jsp";

@@ -15,6 +15,7 @@ import com.miplodder.constants.Constants;
 import com.miplodder.dao.LoginDAO;
 import com.miplodder.models.LoginCredential;
 import com.miplodder.models.User;
+import com.miplodder.utils.SHAUtil;
 
 @Controller
 @RequestMapping("/")
@@ -35,7 +36,7 @@ public class LoginController {
 	@PostMapping
 	public String loginCredentialsCheck(@ModelAttribute LoginCredential loginCredential,
 			/* RedirectAttributes redirectAttributes */ModelMap model) {
-
+		loginCredential.setPassword(SHAUtil.getSHA(loginCredential.getPassword()));
 		User user = loginDAO.login(loginCredential);
 		if (user != null) {
 			model.put(Constants.USERNAME, user.getUsername());

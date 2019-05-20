@@ -108,7 +108,7 @@ table th {
 					<td><c:out value="${adminProduct.productName}" /></td>
 					<td><c:out value="${adminProduct.price}" /></td>
 					<td><c:out value="${adminProduct.seller}" /></td>
-					<td><a href="products/${adminProduct.productId}">Update</a></td>
+					<td align="center"><a href="products/${adminProduct.productId}"><img src="/images/baseline_edit_black_18dp.png"></a></td>
 				</tr>
 			</c:forEach>
 			<tr>

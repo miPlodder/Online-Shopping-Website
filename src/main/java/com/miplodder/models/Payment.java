@@ -20,7 +20,7 @@ public class Payment {
 	String cardName;
 
 	@Column(name = "cardnumber")
-	int cardNumber;
+	String cardNumber;
 
 	@Column(name = "cvv")
 	int cvv;
@@ -44,11 +44,11 @@ public class Payment {
 		this.cardName = cardName;
 	}
 
-	public int getCardNumber() {
+	public String getCardNumber() {
 		return cardNumber;
 	}
 
-	public void setCardNumber(int cardNumber) {
+	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
 	}
 

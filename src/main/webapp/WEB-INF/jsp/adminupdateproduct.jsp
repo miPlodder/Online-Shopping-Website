@@ -113,6 +113,13 @@ input[type=submit]:hover {
 }
 </style>
 
+<script>
+		loadFile = function(event) {
+			var image = document.getElementById('productImage');
+			image.src = URL.createObjectURL(event.target.files[0]);		
+		};
+</script>
+
 </head>
 <body bgcolor="#F0F8FF">
 
@@ -127,12 +134,19 @@ input[type=submit]:hover {
 	</div>
 
 	<div class="body">
-
-		<form id="updateform" method="post" action="/admin/products">
+		<form id="updateform" method="post" action="/admin/products"
+			enctype="multipart/form-data">
 
 			<input type="hidden" name="productId"
 				value="${adminProduct.productId}" />
 			<table>
+				<tr>
+					<td>Image</td>
+					<td><img id="productImage"
+						src="/images/products/${adminProduct.productId}.jpg"
+						height="100px" width="100px" /><br> <input type="file"
+						name="image" onchange="loadFile(event)" accept="image/*" /></td>
+				</tr>
 				<tr>
 					<th>Product Name</th>
 					<td><input type="text" name="productName"

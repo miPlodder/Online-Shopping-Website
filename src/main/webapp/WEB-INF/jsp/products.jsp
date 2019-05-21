@@ -109,6 +109,8 @@ input[type=submit]:hover {
 			<form action="products/${product.productId}" method="post">
 				<table align="center">
 					<tr>
+						<td><img src="/images/products/${product.productId}.jpg"
+							alt="Image Not avaiable" width="100px" height="100px" /></td>
 						<th><c:out value="${product.productName}" /></th>
 						<td><c:out value="$ ${product.price}" /></td>
 						<td><input type="submit" value="Buy now" /></td>

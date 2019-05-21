@@ -96,8 +96,15 @@ input[type=submit]:hover {
   
   window.onload = function() {
   	document.getElementById('a-products').style.background="#6395FF";
-  }
 
+  }
+	
+  loadFile = function(event) {
+			var image = document.getElementById('productImage');
+			image.src = URL.createObjectURL(event.target.files[0]);	
+			image.style.visibility = "visible";	
+		};	
+	
 </script>
 </head>
 <body bgcolor="#F0F8FF">
@@ -118,7 +125,10 @@ input[type=submit]:hover {
 			<table>
 				<tr>
 					<th>Image</th>
-					<td><input type="file" name="image" /></td>
+					<td><img width="100px" height="100px" id="productImage"
+						alt="Image Not Found" style="visibility: hidden" /> <input
+						type="file" name="image" onchange="loadFile(event)"
+						accept="image/*" /></td>
 				</tr>
 				<tr>
 					<th>Product Name</th>

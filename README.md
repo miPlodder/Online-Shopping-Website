@@ -12,9 +12,13 @@ To store information to be used across multiple pages when the user is logged in
 <br>
 mySQL or any other structural DB are not made for storing images (unstructural in nature), even though we can achieve it using BLOB, but that not the appropriate solution. So, the best option is to use Directory-based Image storage and uniquely identify them on the basis of the ProductId.
 
+<img src="./art/directory-based-image-storage.png" width="600px" height="300px" />
+
 **Security**
 <br>
 Instead of storing human readable password on mySQL, SHA-256 function is applied on the password and that hash is stored in mySQL for Security reasons.
+
+<img src="./art/security.png" width="600px" height="300px" />
 
 ## Screencast 
 
